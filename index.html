@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+
+<head>
+
+    <title> Submit a Resume </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"> </script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript" src="https://a.opmnstr.com/app/js/api.min.js" data-campaign="f6brbmuxflyqoriatchv"
+        data-user="71036" async=""></script>
+
+</head>
+
+
+<body>
+
+    <h1 class="text-white text-center font-weight-bold" style="font-size: 65px;">Submit a Resume</h1>
+
+    <form>
+
+        <div class="container"> <br> <br>
+
+            <div class="col-lg-7 m-auto d-block">
+
+                <div class="form-control">
+
+                    <label class="font-weight-bold"> Full Name : <span>*</span></label>
+                    <input required type="text" name="" class="form-control" id="fname" placeholder="First Name"> <br>
+                    <input required type="text" name="" class="form-control" id="lname" placeholder="Last Name">
+
+                </div>
+
+
+                <div class="form-control">
+
+                    <label class="font-weight-bold"> Address : <span>*</span></label> <br>
+
+                    <input type="text" name="" class="form-control" id="strt1" autocomplete="off"
+                        placeholder="Street Address" required> <br>
+
+                    <input type="text" name="" class="form-control" id="strt2" autocomplete="off"
+                        placeholder="Street Address Line 2"> <br>
+
+                    <input type="text" name="" class="form-control" id="city" autocomplete="off" placeholder="City">
+                    <br>
+
+                    <input type="text" name="" class="form-control" id="state" autocomplete="off"
+                        placeholder=" State/Province"> <br>
+
+                    <input type="Number" name="" class="form-control" id="postalcode" autocomplete="off"
+                        placeholder="Postal/Zip Code"> <br>
+
+
+                    <select name="country" id="country" required>
+                        <option value=""> ----Please Select----
+                            <optgroup label="USA">
+                                <option value="AL">Alabama
+                                <option value="CA">California
+                                <option> … remaining US states …
+                            </optgroup>
+
+                            <optgroup label="Canada">
+                                <option value="AB">Alberta
+                                <option value="CA">British Columbia
+                                <option> … remaining provinces and territories …
+                            </optgroup>
+
+                            <optgroup label="UK">
+                                <option value="AB"> England
+                                <option value="CA"> Northern Ireland
+                                <option> … remaining UK states …
+                            </optgroup>
+
+
+                            <optgroup label="Australia">
+                                <option value="AB"> New South Wales
+                                <option value="CA"> Queensland
+                                <option> … remaining Australia states …
+                            </optgroup>
+
+                    </select>
+                    <br> <label for="state" accesskey="s">
+
+                </div>
+
+                <div class="form-control">
+                    <label class="font-weight-bold"> Phone : <span>*</span></label>
+                    <br>
+                    <select name="" id="areaCode" required>
+                        <option value="none" selected="selected"> --------Area Code--------
+                        <option value="AB"> +92 </option>
+                        <option value="BC"> +91 </option>
+                        <option value="BC"> +90 </option>
+                        <option value="BC"> +89 </option>
+                    </select> <br>
+                    <br>
+
+                    <input type="text" name="" class="form-control" id="phNumber" autocomplete="off"
+                        placeholder="Phone Number ">
+
+                </div>
+
+
+                <div class="form-control">
+                    <label class="font-weight-bold"> Email: <span> &nbsp;*</span></label>
+                    <input type="email" name="" class="form-control" id="email" placeholder="ex: myname@example.com"
+                        autocomplete="off">
+
+                </div>
+
+
+                <div class="form-control">
+                    <label class="font-weight-bold" id=""> Area Of Interest : <span>*</span></label> <br>
+
+                    <input type="checkbox" id="interest1" value="coach">
+
+                    <label for="coach" class="same"> Perfomance Coach </label><br>
+
+                    <input type="checkbox" id="interest2" value="manager">
+                    <label for="manager" class="same"> Account Manager </label><br>
+
+                    <input type="checkbox" id="interest3" value="Adminsitative">
+                    <label for="Adminsitative" class="same"> Administrative </label> <br>
+
+                    <input type="checkbox" id="interest4" value="human resources">
+                    <label for="human resources" class="same"> Human Resources </label><br>
+
+                    <input type="checkbox" id="interest5" value="sales">
+                    <label for="sales" class="same"> Sales </label><br>
+
+
+                </div>
+
+                <div class="form-control">
+                    <label class="font-weight-bold"> Skill Level : <span>*</span></label> <br>
+                    <select id="skills" name="skills">
+                        <option value="none" selected="selected"> -------Please Select--------
+                        <option value="AB"> Junior </option>
+                        <option value="BC"> Intermediate </option>
+                        <option value="BC"> Senior </option>
+                        <option value="BC"> Expert </option>
+                    </select>
+
+                </div>
+
+                <button type='button' id="submit" class="btn btn btn-secondary">Submit</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+    <script type="text/javascript">
+
+        const redirect = () => {
+            // you can make a post request to an API using fetch
+            /*
+                fetch('your api url', {
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'same-origin', // include, *same-origin, omit
+                    headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: 'follow', // manual, *follow, error
+                    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                    body: JSON.stringify(data) // body data type must match "Content-Type" header
+                }).then(response => response.json())
+                  .then(data => console.log(data));
+            */
+
+            // redirects to index3.html
+            window.location.href = 'index3.html';
+        }
+        const renderError = (title, message, type) => {
+            swal(title, message, type);
+        }
+        const validate = (e) => {
+
+            // prevents immediate submission of form
+            e.preventDefault();
+
+            // The whole idea is to prevent the default behaviour of a form
+            // by using e(event).preventDefault() which will prevent the default behaviour of a form
+            // running your validation
+            // if your validation succeeds then you redirent.
+
+            // Try to use let and const for your variable declarations
+
+            // let works like var except that it is block-scoped and not hoisted
+            // const is constant and cannot be changea at runtime.
+
+            const firstname = document.getElementById("fname").value;
+            const lname = document.getElementById("lname").value;
+            const strt1 = document.getElementById("strt1").value;
+            const strt2 = document.getElementById("strt2").value;
+            const postalcode = document.getElementById("postalcode").value;
+            const areaCode = document.getElementById("areaCode").value;
+            const phNumber = document.getElementById("phNumber").value;
+            const email = document.getElementById("email").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+
+
+            const interest1 = document.getElementById("interest1");
+            const interest2 = document.getElementById("interest2");
+            const interest3 = document.getElementById("interest3");
+            const interest5 = document.getElementById("interest5");
+            // makes DOM query for skills select field
+            const skills = document.getElementById("skills");
+
+            // HTMLSelectElement.selectedOptions: returns the selected option, you can call skills.selectedOptions.value to get the value.
+            // HTMLSelectElement.selectedIndex: returns the selected option index
+            // HTMLSelectElement.length: returns the length of the select form field
+            
+           
+
+            let checkboxes = 0;
+
+            const format = /[ `!@#$%^&*()_+\-=\[\]{}"\\|,.<>\/?~]/;
+
+           
+
+            if(!skills.selectedIndex > 0){
+                return renderError("Error!", "A skill level must be selected", "error");
+            }
+            if ((firstname === "") || (lname === "") || (city === "") || (phNumber === "") || (strt1 === "") || (strt2 === "") || (postalcode === "") || (areaCode === "") || (email === "")) {
+                // Breaks the flow of the function if its called.
+                // Since this is what a return does;
+                return renderError("Error!", "All the required fields must be filled", "error");
+            }
+
+            else {
+
+                if (!(isUpperCase(firstname)) || !(isUpperCase(lname))) {
+                    return renderError("Warning", "Full name must be all uppercase", "warning");
+                }
+
+                else {
+                    if (phNumber.length > 11) {
+                        return renderError("Error", "Phone number must not exceed 11 characters", "error");
+
+                    }
+
+
+                    else {
+
+                        if (interest1.checked) {
+                            checkboxes++;
+                        }
+                        if (interest2.checked) {
+                            checkboxes++;
+                        }
+                        if (interest3.checked) {
+                            checkboxes++;
+                        }
+                        if (interest4.checked) {
+                            checkboxes++;
+                        }
+                        if (interest5.checked) {
+                            checkboxes++;
+                        }
+
+
+                        if (checkboxes == 0) {
+                            return renderError("Error", "You must select on of the area of interest checkbox ", "error");
+
+                        }
+
+                        else {
+
+                            if (checkboxes > 2) {
+                                return renderError("Warning", "You can only select two interest of areas ", "warning");
+
+                            }
+
+                            else {
+
+                                if (email.indexOf('@') <= 0) {
+
+                                    return renderError("Error", "Invalid Email", "error");
+
+
+                                }
+
+                                else {
+
+                                    if ((email.charAt(email.length - 4) != ".") && (email.charAt(email.length - 3) != ".")) {
+                                        return renderError("Error", "Invalid Email", "error");
+
+                                    }
+
+                                    else {
+
+                                        if (format.test(strt1) || format.test(strt2)) {
+                                            return renderError("Error", "Invalid street address 1 or 2 they might contain special character that aren't allowed", "error");
+                                        }
+
+
+                                        else {
+
+
+                                            if ((isNaN(postalcode))) {
+
+                                                return renderError("Error", "Invalid Postal code", "error");
+
+                                            }
+
+                                            else {
+
+                                                if (/^[a-zA-Z]+$/.test(city)) {
+                                                    if (/^[a-zA-Z]+$/.test(state)) {
+                                                        // Do what ever you want to do
+                                                        swal("Great Job!", "Resume Submitted", "success").then(value => {
+                                                            // Redirect to any page. maybe login or what ever
+                                                            // This will run when the alert has been dismissed
+                                                            // you change it tho.
+                                                            // you can also pass your data to the redirect function
+                                                            // add it as a parameter
+                                                            // and recieve it where it was declared.
+                                                            redirect();
+                                                        });
+                                                        console.log("%cWorked", "font-size: 30px; color: coral;")
+                                                        return
+                                                    }
+
+                                                    else {
+
+                                                        return renderError("Warning", "Invalid state name", "warning");
+
+                                                    }
+
+                                                }
+
+                                                else {
+
+                                                    return renderError("Warning", "Inavlid city name", "warning");
+
+                                                }
+
+                                            }
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+        const btn = document.getElementById("submit");
+        btn.addEventListener("click", validate);
+
+        function isUpperCase(str) {
+            return str === str.toUpperCase();
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
